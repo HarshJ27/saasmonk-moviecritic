@@ -19,7 +19,7 @@ const EditMovieDetails = () => {
         const fetchMovieDetails = async () => {
           try {
             const respone = await axios.get(
-              `http://localhost:8001/api/v1/moviecritic/all-movies/${id}`
+              `https://saasmonk-moviecritic.vercel.app/api/v1/moviecritic/all-movies/${id}`
             );
             console.log(respone.data);
     
@@ -39,7 +39,7 @@ const EditMovieDetails = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const respone = await axios.put(`http://localhost:8001/api/v1/moviecritic/edit-movie-details/${id}`, 
+            const respone = await axios.put(`https://saasmonk-moviecritic.vercel.app/api/v1/moviecritic/edit-movie-details/${id}`, 
             {
                 Name,
                 Desc,

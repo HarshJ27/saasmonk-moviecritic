@@ -19,7 +19,7 @@ const EachMovie = () => {
     const fetchMovieDetails = async () => {
       try {
         const respone = await axios.get(
-          `http://localhost:8001/api/v1/moviecritic/all-movies/${id}`
+          `https://saasmonk-moviecritic.vercel.app/api/v1/moviecritic/all-movies/${id}`
         );
 
         if (respone.status === 200) {
@@ -41,7 +41,7 @@ const EachMovie = () => {
   useEffect(() => {
     const fetchReviews = async () => {
         try {
-            const response = await axios.get(`http://localhost:8001/api/v1/moviecritic/all-movies/reviews/${id}`);
+            const response = await axios.get(`https://saasmonk-moviecritic.vercel.app/api/v1/moviecritic/all-movies/reviews/${id}`);
 
             if(response.status===200) {
                 setReviews(response.data);
@@ -60,7 +60,7 @@ const EachMovie = () => {
 
   const deleteReview = async (id) => {
     try{
-        const response = await axios.delete(`http://localhost:8001/api/v1/moviecritic/reviews/delete/${id}`);
+        const response = await axios.delete(`https://saasmonk-moviecritic.vercel.app/api/v1/moviecritic/reviews/delete/${id}`);
 
         if(response.status===200) {
             console.log("Movie deleted successfully!!!");

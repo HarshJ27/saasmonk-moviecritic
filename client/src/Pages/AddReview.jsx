@@ -17,7 +17,7 @@ const AddReview = () => {
     useEffect(() => {
         const fetchAllMovies = async () => {
             try {
-                const response = await axios.get("http://localhost:8001/api/v1/moviecritic/all-movies");
+                const response = await axios.get("https://saasmonk-moviecritic.vercel.app/api/v1/moviecritic/all-movies");
                 console.log(response.data);
                 if(response.status===200) {
                     setAllMovies(response.data);
@@ -35,7 +35,7 @@ const AddReview = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const respone = await axios.post("http://localhost:8001/api/v1/moviecritic/add-review", 
+            const respone = await axios.post("https://saasmonk-moviecritic.vercel.app/api/v1/moviecritic/add-review", 
             {
                 id,
                 ReviewerName,

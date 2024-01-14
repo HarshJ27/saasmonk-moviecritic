@@ -14,7 +14,7 @@ const AddMovie = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const respone = await axios.post("http://localhost:8001/api/v1/moviecritic/add-movie", 
+            const respone = await axios.post("https://saasmonk-moviecritic.vercel.app/api/v1/moviecritic/add-movie", 
             {
                 Name,
                 Desc,
