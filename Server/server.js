@@ -7,6 +7,13 @@ import fileUpload from "express-fileupload";
 const app = express();
 dotenv.config();
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://saasmonk-moviecritic-frontend.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
 app.use(fileUpload());
 app.use(express.json());
 app.use(cors(
