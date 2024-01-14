@@ -7,16 +7,10 @@ import fileUpload from "express-fileupload";
 const app = express();
 dotenv.config();
 
-app.use(cors(
-  {
-    origin: ["https://saasmonk-moviecritic-frontend.vercel.app/"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: true
-  }
-));
-
 app.use(fileUpload());
 app.use(express.json());
+
+app.use(cors());
 
 
 const PORT = 8001;
