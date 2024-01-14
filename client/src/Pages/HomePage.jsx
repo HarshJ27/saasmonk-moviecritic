@@ -14,11 +14,7 @@ const HomePage = () => {
     useEffect(() => {
         const fetchAllMovies = async () => {
             try {
-                const response = await axios.get("https://saasmonk-moviecritic.vercel.app/api/v1/moviecritic/all-movies", {
-                  headers: {
-                    'Content-Type': 'application/json'
-                  },
-                });
+                const response = await axios.get("https://saasmonk-moviecritic.vercel.app/api/v1/moviecritic/all-movies");
                 console.log(response.data);
                 if(response.status===200) {
                     setAllMovies(response.data);
